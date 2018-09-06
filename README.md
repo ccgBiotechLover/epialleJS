@@ -10,7 +10,9 @@ Requirements:
 
 Usage:
 1） Appending environment variables of epialleJS to the line "export path=$path:" of the ~/.bash_profile in the user personal directory or switching to the path to epialleJS before runing the software;
+
 2) After switching to the path to epialleJS, command for identifying unique epiallele of a sample is:./unialle -a file1 -o outputpath -c coverage -d distance
+
 command for identifying common epiallele of two samples is:./epialle -a file1 -b file2 -o outputpath -c coverage -d distance
 
 Parameter specification:
