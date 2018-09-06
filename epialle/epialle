@@ -1,0 +1,62 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Getopt::Long;
+use File::Basename qw<fileparse>;
+#获取输入输出文件，表观等位长度，覆盖度
+#our ($in1,$in2,$out,$dis,$cov);
+our ($in1,$in2,$out,$dis,$cov);
+GetOptions(
+	'a=s' => \$in1,
+	'b=s' => \$in2,
+	'out|o=s' => \$out,
+	'd:i' => \$dis,
+	'cov|c:i' => \$cov,
+);
+if(defined($dis)){
+	print "distance is: $dis\n";
+}else{
+	$dis = 126;
+}
+if(defined($cov)){
+	print "coverage is: $cov\n";
+}else{
+	$cov = 10;
+}
+#定义输出文件
+our $out3;
+#my ($file1,$dir) = fileparse($in1);
+#my @array = split/\./,$file1;
+#$file1 = "$array[0]_epialle.txt";
+#$out1 = "$out$file1";
+#($file1,$dir) = fileparse($in2);
+#@array = split/\./,$file1;
+#$file1 = "$array[0]_epialle.txt";
+#$out2 = "$out$file1";
+$out3 = "$out"."common_epialle.txt";
+#print "$out1\n$out2\n$out3\n";
+
+#open RES,">","$out" or die "cannot open resultfile:$!\n";
+#输出文件包括：染色体、起始位点，终止位点、正负链、四个位点的坐标、JSD值、两个样本的甲基化值、两个样本中每种模式的个数、两个样本的测序深度
+#print RES "chr\tstart\tend\tstrand\tloci\tJSD\tmeth1\tmeth2\tp1:0000\tp1:0001\tp1:0010\tp1:0011\tp1:0100\tp1:0101\tp1:0110\tp1:0111\tp1:1000\tp1:1001\tp1:1010\tp1:1011\tp1:1100\tp1:1101\tp1:1110\tp1:1111\tp2:0000\tp2:0001\tp2:0010\tp2:0011\tp2:0100\tp2:0101\tp2:0110\tp2:0111\tp2:1000\tp2:1001\tp2:1010\tp2:1011\tp2:1100\tp2:1101\tp2:1110\tp2:1111\tdepth1\tdepth2\n";
+#$readtwo
+our ($file,$headline,$headone,@chr,$readone,$readtwo,@arrone,@methline,$strand,$cnum,@base,$ebase,@loc,@m,$pos,$i,$k,$j,$n,$index,$dist,%locimeth1,%locimeth2,$key,$loci,$loci1,@p1,@p2,$freq1,$freq2,%pattern1,%meth1,%pattern2,%meth2,$count1,$count2,$f,$methy1,$methy2,$HA,$HB,$HAB,$HH,$JS,$JSD,$patnum1,$patnum2);
+require "./skip_header.pl";
+require "./epialle.pl";
+require "./pattern_meth.pl";
+#require "./unique_alle.pl";
+require "./common_alle.pl";
+#process file1
+skip_header($in1);
+%locimeth1 = epialle($in1,$dis);
+#process file2
+skip_header($in2);
+%locimeth2 = epialle($in2,$dis);
+pattern_meth();
+
+#unique_alle($out1,%locimeth1);
+#unique_alle($out2,%locimeth2);
+common_alle();
+
+
+
