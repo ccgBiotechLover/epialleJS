@@ -20,4 +20,4 @@ Parameter specification:
 -o: output file path way;
 -c: the coverage used for identifying epiallele;
 -d: distance used to control the length of epiallele.
-电视剧
+
