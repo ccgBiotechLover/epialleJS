@@ -16,6 +16,7 @@ Usage:
 command for identifying common epiallele of two samples is:./epialle -a file1 -b file2 -o outputpath -c coverage -d distance
 
 Parameter specification:
+
 -a or -b: file of sam format used for identifying epiallele;
 -o: output file pathway;
 -c: the coverage used for identifying epiallele;
