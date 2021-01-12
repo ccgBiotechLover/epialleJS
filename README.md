@@ -9,6 +9,7 @@ Requirements:
 4) Input file should be the sam file of RRBS or WGBS;
 
 Usage:
+
 1） Appending environment variables of epialleJS to the line "export path=$path:" of the ~/.bash_profile in the user personal directory or switching to the path to epialleJS before runing the software;
 
 2) After switching to the path to epialleJS, command for identifying unique epiallele of a sample is:./unialle -a file1 -o outputpath -c coverage -d distance
@@ -22,6 +23,7 @@ Parameter specification:
 -d: distance used to control the length of epiallele.
 
 Example:
+
 recognization of unique epiallele from test.sam file
 cd /path/to/epialle/
 ./unialle -a ./test.sam -o ./
