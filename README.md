@@ -10,23 +10,23 @@ Requirements:
 
 Usage:
 
-1.Appending environment variables of epialleJS to the line "export path=$path:" of the ~/.bash_profile in the user personal directory or switching to the path to epialleJS before runing the software;
+1. Appending environment variables of epialleJS to the line "export path=$path:" of the ~/.bash_profile in the user personal directory or switching to the path to epialleJS before runing the software;
 
-2.After switching to the path to epialleJS, command for identifying unique epiallele of a sample is:./unialle -a file1.sam -o outputpath -c coverage -d distance
+2. After switching to the path to epialleJS, command for identifying unique epiallele of a sample is:./unialle -a file1.sam -o outputpath -c coverage -d distance
 
-3.command for identifying common epiallele of two samples is:./epialle -a file1.sam -b file2.sam -o outputpath -c coverage -d distance
+3. command for identifying common epiallele of two samples is:./epialle -a file1.sam -b file2.sam -o outputpath -c coverage -d distance
 
 Parameter specification:
 -a or -b: file of sam format used for identifying epiallele;
 -o: output file pathway;
 -c: the coverage required for identifying epiallele, default value is 10;
--d: distance used to set the maximum length of epialleles, default value is 126.
+-d: the distance used to set the maximum length of epialleles, default value is 126.
 
 Example:
-recognization of unique epiallele from test.sam file
+identification of unique epiallele from test.sam file
 
 cd /path/to/epialle/
 
 ./unialle -a ../example_data/test.sam -o ../example_data/
 
-the recognized unique epialle result file was stored in "test_epialle.txt" file
+the result file was stored in "test_epialle.txt" file
