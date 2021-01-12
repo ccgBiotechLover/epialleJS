@@ -10,11 +10,11 @@ Requirements:
 
 Usage:
 
-1）Appending environment variables of epialleJS to the line "export path=$path:" of the ~/.bash_profile in the user personal directory or switching to the path to epialleJS before runing the software;
+1.Appending environment variables of epialleJS to the line "export path=$path:" of the ~/.bash_profile in the user personal directory or switching to the path to epialleJS before runing the software;
 
-2）After switching to the path to epialleJS, command for identifying unique epiallele of a sample is:./unialle -a file1.sam -o outputpath -c coverage -d distance
+2.After switching to the path to epialleJS, command for identifying unique epiallele of a sample is:./unialle -a file1.sam -o outputpath -c coverage -d distance
 
-3）command for identifying common epiallele of two samples is:./epialle -a file1.sam -b file2.sam -o outputpath -c coverage -d distance
+3.command for identifying common epiallele of two samples is:./epialle -a file1.sam -b file2.sam -o outputpath -c coverage -d distance
 
 Parameter specification:
 -a or -b: file of sam format used for identifying epiallele;
