@@ -23,6 +23,7 @@ Parameter specification:
 -d: distance used to control the length of epiallele.
 
 Example:
+
 recognization of unique epiallele from test.sam file
 cd /path/to/epialle/
 ./unialle -a ./test.sam -o ./
