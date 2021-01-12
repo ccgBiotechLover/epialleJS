@@ -29,4 +29,4 @@ cd /path/to/epialle/
 
 ./unialle -a ../example_data/test.sam -o ../example_data/
 
-the result file was stored in "test_epialle.txt" file
+the result file is stored in "test_epialle.txt" file
